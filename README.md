@@ -58,7 +58,9 @@ The Athena Game project is open source so you can continue to evolve and help de
 
 The community can be found on [GitHub Discussions](https://github.com/fernandoors/athena-game/discussions), where you can ask questions, voice ideas, and share your projects.
 
-To chat with other community members you can join the [Impulso Network](https://discord.gg/wNtNCDvG).
+To chat with other community members you can join the [Impulso Network](https://impulso.network).
+
+See our Notion ref in [Athena Game](https://www.notion.so/Jogo-da-Athena-c8c9f7c82fca4789abe269922480a613)
 
 ## 🤓 Authors
 
