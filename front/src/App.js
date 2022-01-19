@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react'
+import { connect, listenMessage, sendMessage } from './service/socket-client';
+
 import './App.css';
 
 function App() {
+  const [room, setRoom] = useState('')
+  useEffect(() => {
+    connect()
+    listenMessage('new_user', console.log)
+  }, [])
+  listenMessage('new_user', console.log)
+  const handleClick = () => {
+    sendMessage('enter_in_room', room || 1)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 >Salve Impulso</h1>
+
+      <button onClick={handleClick}>Entrar</button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <input value={room} onChange={e => setRoom(e.target.value)} />
+      <button onClick={handleClick}>Logar</button>
     </div>
   );
 }
