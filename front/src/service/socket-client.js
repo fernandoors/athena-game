@@ -5,7 +5,11 @@ const socket = socketio('http://localhost:3000', { autoConnect: false })
 function connect() {
   socket.connect()
 }
-
+function disconnect() {
+  if (socket.connected) {
+    socket.disconnect()
+  }
+}
 function sendMessage(key, data, cb = console.log) {
   socket.emit(key, data, cb)
 }
@@ -16,6 +20,7 @@ function listenMessage(key, data, cb = console.log) {
 
 export {
   connect,
+  disconnect,
   sendMessage,
   listenMessage
 }
