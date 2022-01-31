@@ -10,12 +10,12 @@ function disconnect() {
     socket.disconnect()
   }
 }
-function sendMessage(key, data, cb = console.log) {
+function sendMessage(key = '', data = {}, cb = console.log) {
   socket.emit(key, data, cb)
 }
 
-function listenMessage(key, data, cb = console.log) {
-  socket.on(key, data, cb)
+function listenMessage(key = '', cb = console.log) {
+  socket.on(key, cb)
 }
 
 export {
